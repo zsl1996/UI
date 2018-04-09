@@ -22,6 +22,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -78,6 +79,9 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QPushButton *pushButton_13;
     QPushButton *pushButton_12;
+    QWidget *wjilu;
+    QLabel *label_12;
+    QTableView *tableView;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;
@@ -86,7 +90,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(978, 612);
+        MainWindow->resize(1235, 1728);
         actiongsddgs = new QAction(MainWindow);
         actiongsddgs->setObjectName(QStringLiteral("actiongsddgs"));
         centralWidget = new QWidget(MainWindow);
@@ -190,7 +194,7 @@ public:
 
         wsheding = new QWidget(centralWidget);
         wsheding->setObjectName(QStringLiteral("wsheding"));
-        wsheding->setGeometry(QRect(30, 60, 991, 1281));
+        wsheding->setGeometry(QRect(10, 40, 1131, 581));
         label_2 = new QLabel(wsheding);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(40, 30, 271, 51));
@@ -319,7 +323,21 @@ public:
 
         horizontalLayout_9->addWidget(pushButton_12);
 
+        wjilu = new QWidget(centralWidget);
+        wjilu->setObjectName(QStringLiteral("wjilu"));
+        wjilu->setGeometry(QRect(0, 40, 1051, 761));
+        label_12 = new QLabel(wjilu);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(300, 40, 251, 71));
+        label_12->setFont(font);
+        tableView = new QTableView(wjilu);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(50, 140, 711, 311));
         MainWindow->setCentralWidget(centralWidget);
+        horizontalLayoutWidget_2->raise();
+        wdati->raise();
+        wjilu->raise();
+        wsheding->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -367,6 +385,7 @@ public:
         checkBox1->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\347\234\237\345\210\206\346\225\260\350\277\220\347\256\227", nullptr));
         pushButton_13->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\256\276\347\275\256", nullptr));
         pushButton_12->setText(QApplication::translate("MainWindow", "\346\201\242\345\244\215\351\273\230\350\256\244", nullptr));
+        label_12->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230\350\256\260\345\275\225", nullptr));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 
