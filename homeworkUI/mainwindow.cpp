@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-  ui->wdati->hide();
+    ui->wdati->close();
+    ui->wsheding->close();
     ui->timu->setText("1+1+3?");
 
 
@@ -20,5 +21,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    ui->wdati->show();
+
+    ui->wsheding->close();
+     ui->wdati->show();
+
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+
+     ui->wdati->close();
+    ui->wsheding->show();
+
 }

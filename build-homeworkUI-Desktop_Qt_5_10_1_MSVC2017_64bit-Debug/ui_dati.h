@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
@@ -49,21 +50,50 @@ public:
     QPushButton *pushButton_5;
     QPushButton *pushButton_4;
     QPushButton *pushButton_8;
+    QWidget *wsheding;
+    QLabel *label_2;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
+    QLabel *label_3;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QWidget *horizontalLayoutWidget_4;
+    QHBoxLayout *horizontalLayout_7;
+    QCheckBox *checkBox_3;
+    QCheckBox *checkBox_4;
+    QCheckBox *checkBox_2;
+    QCheckBox *checkBox;
+    QLabel *label_11;
+    QWidget *horizontalLayoutWidget_5;
+    QHBoxLayout *horizontalLayout_8;
+    QCheckBox *checkBox_21;
+    QCheckBox *checkBox_41;
+    QCheckBox *checkBox_31;
+    QCheckBox *checkBox1;
+    QWidget *horizontalLayoutWidget_6;
+    QHBoxLayout *horizontalLayout_9;
+    QPushButton *pushButton_13;
+    QPushButton *pushButton_12;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
+    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(983, 649);
+        MainWindow->resize(978, 612);
         actiongsddgs = new QAction(MainWindow);
         actiongsddgs->setObjectName(QStringLiteral("actiongsddgs"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         wdati = new QWidget(centralWidget);
         wdati->setObjectName(QStringLiteral("wdati"));
-        wdati->setGeometry(QRect(0, 50, 991, 581));
+        wdati->setGeometry(QRect(0, 40, 991, 581));
         lable = new QLabel(wdati);
         lable->setObjectName(QStringLiteral("lable"));
         lable->setGeometry(QRect(300, 30, 431, 81));
@@ -158,6 +188,137 @@ public:
 
         horizontalLayout_5->addWidget(pushButton_8);
 
+        wsheding = new QWidget(centralWidget);
+        wsheding->setObjectName(QStringLiteral("wsheding"));
+        wsheding->setGeometry(QRect(30, 60, 991, 1281));
+        label_2 = new QLabel(wsheding);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(40, 30, 271, 51));
+        QFont font5;
+        font5.setPointSize(15);
+        label_2->setFont(font5);
+        lineEdit_3 = new QLineEdit(wsheding);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(180, 100, 101, 20));
+        lineEdit_4 = new QLineEdit(wsheding);
+        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        lineEdit_4->setGeometry(QRect(180, 150, 101, 20));
+        lineEdit_5 = new QLineEdit(wsheding);
+        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        lineEdit_5->setGeometry(QRect(500, 150, 51, 20));
+        lineEdit_6 = new QLineEdit(wsheding);
+        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        lineEdit_6->setGeometry(QRect(590, 150, 51, 20));
+        label_3 = new QLabel(wsheding);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(70, 90, 81, 31));
+        QFont font6;
+        font6.setPointSize(12);
+        label_3->setFont(font6);
+        label_7 = new QLabel(wsheding);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(70, 150, 101, 20));
+        label_7->setFont(font6);
+        label_8 = new QLabel(wsheding);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(350, 150, 121, 16));
+        label_8->setFont(font6);
+        label_9 = new QLabel(wsheding);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(560, 150, 21, 21));
+        label_9->setFont(font6);
+        label_10 = new QLabel(wsheding);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(360, 95, 121, 21));
+        label_10->setFont(font6);
+        horizontalLayoutWidget_4 = new QWidget(wsheding);
+        horizontalLayoutWidget_4->setObjectName(QStringLiteral("horizontalLayoutWidget_4"));
+        horizontalLayoutWidget_4->setGeometry(QRect(490, 90, 451, 31));
+        horizontalLayout_7 = new QHBoxLayout(horizontalLayoutWidget_4);
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        horizontalLayout_7->setContentsMargins(0, 0, 0, 0);
+        checkBox_3 = new QCheckBox(horizontalLayoutWidget_4);
+        checkBox_3->setObjectName(QStringLiteral("checkBox_3"));
+        checkBox_3->setEnabled(true);
+        checkBox_3->setFont(font6);
+        checkBox_3->setChecked(true);
+
+        horizontalLayout_7->addWidget(checkBox_3);
+
+        checkBox_4 = new QCheckBox(horizontalLayoutWidget_4);
+        checkBox_4->setObjectName(QStringLiteral("checkBox_4"));
+        checkBox_4->setFont(font6);
+        checkBox_4->setChecked(true);
+
+        horizontalLayout_7->addWidget(checkBox_4);
+
+        checkBox_2 = new QCheckBox(horizontalLayoutWidget_4);
+        checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
+        checkBox_2->setFont(font6);
+
+        horizontalLayout_7->addWidget(checkBox_2);
+
+        checkBox = new QCheckBox(horizontalLayoutWidget_4);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+
+        horizontalLayout_7->addWidget(checkBox);
+
+        label_11 = new QLabel(wsheding);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(40, 200, 271, 51));
+        label_11->setFont(font5);
+        horizontalLayoutWidget_5 = new QWidget(wsheding);
+        horizontalLayoutWidget_5->setObjectName(QStringLiteral("horizontalLayoutWidget_5"));
+        horizontalLayoutWidget_5->setGeometry(QRect(60, 280, 761, 80));
+        horizontalLayout_8 = new QHBoxLayout(horizontalLayoutWidget_5);
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
+        checkBox_21 = new QCheckBox(horizontalLayoutWidget_5);
+        checkBox_21->setObjectName(QStringLiteral("checkBox_21"));
+        checkBox_21->setFont(font6);
+
+        horizontalLayout_8->addWidget(checkBox_21);
+
+        checkBox_41 = new QCheckBox(horizontalLayoutWidget_5);
+        checkBox_41->setObjectName(QStringLiteral("checkBox_41"));
+        checkBox_41->setFont(font6);
+
+        horizontalLayout_8->addWidget(checkBox_41);
+
+        checkBox_31 = new QCheckBox(horizontalLayoutWidget_5);
+        checkBox_31->setObjectName(QStringLiteral("checkBox_31"));
+        checkBox_31->setFont(font6);
+
+        horizontalLayout_8->addWidget(checkBox_31);
+
+        checkBox1 = new QCheckBox(horizontalLayoutWidget_5);
+        checkBox1->setObjectName(QStringLiteral("checkBox1"));
+        checkBox1->setFont(font6);
+
+        horizontalLayout_8->addWidget(checkBox1);
+
+        horizontalLayoutWidget_6 = new QWidget(wsheding);
+        horizontalLayoutWidget_6->setObjectName(QStringLiteral("horizontalLayoutWidget_6"));
+        horizontalLayoutWidget_6->setGeometry(QRect(160, 390, 611, 80));
+        horizontalLayout_9 = new QHBoxLayout(horizontalLayoutWidget_6);
+        horizontalLayout_9->setSpacing(356);
+        horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        horizontalLayout_9->setContentsMargins(0, 0, 0, 0);
+        pushButton_13 = new QPushButton(horizontalLayoutWidget_6);
+        pushButton_13->setObjectName(QStringLiteral("pushButton_13"));
+
+        horizontalLayout_9->addWidget(pushButton_13);
+
+        pushButton_12 = new QPushButton(horizontalLayoutWidget_6);
+        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
+
+        horizontalLayout_9->addWidget(pushButton_12);
+
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -165,6 +326,9 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName(QStringLiteral("toolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         retranslateUi(MainWindow);
 
@@ -186,6 +350,24 @@ public:
         pushButton_5->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230\350\256\260\345\275\225", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "\346\210\220\347\273\251\345\210\206\344\272\253", nullptr));
         pushButton_8->setText(QApplication::translate("MainWindow", "\350\201\224\347\263\273\346\210\221\344\273\254", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "\350\257\267\346\240\271\346\215\256\351\234\200\350\246\201\350\277\233\350\241\214\351\242\230\347\233\256\347\233\270\345\205\263\350\256\276\345\256\232", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "\351\242\230\347\233\256\344\270\252\346\225\260\357\274\232", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "\346\223\215\344\275\234\346\225\260\344\270\252\346\225\260\357\274\232", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "\346\223\215\344\275\234\346\225\260\346\225\260\345\200\274\350\214\203\345\233\264\357\274\232", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "\350\207\263", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "\350\277\220\347\256\227\347\254\246\347\247\215\347\261\273\357\274\232", nullptr));
+        checkBox_3->setText(QApplication::translate("MainWindow", "\345\212\240\346\263\225", nullptr));
+        checkBox_4->setText(QApplication::translate("MainWindow", "\345\207\217\346\263\225", nullptr));
+        checkBox_2->setText(QApplication::translate("MainWindow", "\344\271\230\346\263\225", nullptr));
+        checkBox->setText(QApplication::translate("MainWindow", "\351\231\244\346\263\225", nullptr));
+        label_11->setText(QApplication::translate("MainWindow", "\351\232\276\345\272\246\346\217\220\345\215\207", nullptr));
+        checkBox_21->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\345\260\217\346\225\260\350\277\220\347\256\227", nullptr));
+        checkBox_41->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\344\271\230\346\226\271\350\277\220\347\256\227", nullptr));
+        checkBox_31->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\345\260\217\346\225\260\350\277\220\347\256\227", nullptr));
+        checkBox1->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\347\234\237\345\210\206\346\225\260\350\277\220\347\256\227", nullptr));
+        pushButton_13->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\256\276\347\275\256", nullptr));
+        pushButton_12->setText(QApplication::translate("MainWindow", "\346\201\242\345\244\215\351\273\230\350\256\244", nullptr));
+        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 
 };
