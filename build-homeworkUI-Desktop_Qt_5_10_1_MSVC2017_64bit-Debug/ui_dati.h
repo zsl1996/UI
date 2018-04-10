@@ -90,7 +90,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1235, 1728);
+        MainWindow->resize(978, 702);
         actiongsddgs = new QAction(MainWindow);
         actiongsddgs->setObjectName(QStringLiteral("actiongsddgs"));
         centralWidget = new QWidget(MainWindow);
@@ -194,7 +194,7 @@ public:
 
         wsheding = new QWidget(centralWidget);
         wsheding->setObjectName(QStringLiteral("wsheding"));
-        wsheding->setGeometry(QRect(10, 40, 1131, 581));
+        wsheding->setGeometry(QRect(10, 40, 1071, 581));
         label_2 = new QLabel(wsheding);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(40, 30, 271, 51));
@@ -266,6 +266,7 @@ public:
 
         checkBox = new QCheckBox(horizontalLayoutWidget_4);
         checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setFont(font6);
 
         horizontalLayout_7->addWidget(checkBox);
 

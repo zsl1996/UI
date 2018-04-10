@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1235</width>
-    <height>1728</height>
+    <width>978</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -417,6 +417,11 @@
       </item>
       <item>
        <widget class="QCheckBox" name="checkBox">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>除法</string>
         </property>
