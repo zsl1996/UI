@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1708</width>
-    <height>1160</height>
+    <width>987</width>
+    <height>707</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,19 +18,22 @@
     <bool>true</bool>
    </property>
    <widget class="QWidget" name="wdati" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>40</y>
-      <width>991</width>
+      <x>50</x>
+      <y>30</y>
+      <width>941</width>
       <height>581</height>
      </rect>
     </property>
     <widget class="QLabel" name="lable">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>30</y>
+       <x>230</x>
+       <y>40</y>
        <width>431</width>
        <height>81</height>
       </rect>
@@ -50,8 +53,8 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>200</y>
+       <x>60</x>
+       <y>220</y>
        <width>761</width>
        <height>91</height>
       </rect>
@@ -66,8 +69,8 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>700</x>
-       <y>120</y>
+       <x>600</x>
+       <y>130</y>
        <width>91</width>
        <height>41</height>
       </rect>
@@ -84,20 +87,27 @@
     <widget class="QLCDNumber" name="lcdNumber">
      <property name="geometry">
       <rect>
-       <x>830</x>
-       <y>130</y>
+       <x>680</x>
+       <y>120</y>
        <width>121</width>
-       <height>23</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Arial Narrow</family>
-       <pointsize>11</pointsize>
+       <pointsize>26</pointsize>
        <weight>75</weight>
        <italic>true</italic>
        <bold>true</bold>
+       <underline>true</underline>
       </font>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>3</number>
      </property>
      <property name="value" stdset="0">
       <double>20.000000000000000</double>
@@ -106,7 +116,7 @@
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>390</x>
+       <x>340</x>
        <y>340</y>
        <width>221</width>
        <height>71</height>
@@ -119,14 +129,14 @@
       </font>
      </property>
      <property name="text">
-      <string>输入结果</string>
+      <string/>
      </property>
     </widget>
     <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>450</y>
+       <x>150</x>
+       <y>440</y>
        <width>561</width>
        <height>131</height>
       </rect>
@@ -137,6 +147,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="pushButton">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="text">
          <string>开始答题</string>
         </property>
@@ -207,11 +220,14 @@
     </layout>
    </widget>
    <widget class="QWidget" name="wsheding" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>860</y>
-      <width>1071</width>
+      <x>10</x>
+      <y>40</y>
+      <width>981</width>
       <height>581</height>
      </rect>
     </property>
@@ -513,8 +529,8 @@
     <widget class="QWidget" name="horizontalLayoutWidget_6">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>390</y>
+       <x>130</x>
+       <y>430</y>
        <width>611</width>
        <height>80</height>
       </rect>
@@ -543,10 +559,10 @@
    <widget class="QWidget" name="wjilu" native="true">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>140</y>
-      <width>1051</width>
-      <height>751</height>
+      <x>30</x>
+      <y>40</y>
+      <width>1031</width>
+      <height>611</height>
      </rect>
     </property>
     <property name="font">
@@ -558,7 +574,7 @@
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>300</x>
+       <x>340</x>
        <y>40</y>
        <width>251</width>
        <height>71</height>
@@ -576,9 +592,9 @@
     <widget class="QTableWidget" name="tableWidget">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>170</y>
-       <width>611</width>
+       <x>160</x>
+       <y>140</y>
+       <width>561</width>
        <height>371</height>
       </rect>
      </property>
@@ -593,40 +609,60 @@
      </property>
      <column>
       <property name="text">
-       <string>题号</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>题目</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
      </column>
      <column>
       <property name="text">
        <string>得分</string>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>正确答案</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
      </column>
      <column>
       <property name="text">
        <string>回答</string>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>用时</string>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
      </column>
     </widget>
    </widget>
    <zorder>horizontalLayoutWidget_2</zorder>
-   <zorder>wdati</zorder>
    <zorder>wsheding</zorder>
    <zorder>wjilu</zorder>
+   <zorder>wdati</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

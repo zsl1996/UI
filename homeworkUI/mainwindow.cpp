@@ -2,11 +2,40 @@
 #include "ui_dati.h"
 #include<iostream>
 #include"tableitem.h"
-#include"core/Core.h"
-struct table
+#include"Core.h"
+#include<vector>
+#include <QMessageBox>
+#include <QTimer>
+int lcd_time= 20; //计时器间隔
+struct s_timu
 {
-
+    string s1;
+    string s2;
 };
+void getstring(vector<s_timu>& s )
+{
+	ifstream in1("formula.txt");
+	ifstream in2("result.txt");
+	s_timu t;
+	string line;
+	string s1;
+	string s2;
+    if (in1&&in2)
+	{
+        while (getline(in1,s1)&& getline(in2,s2))
+		{
+			t.s1 = s1;
+			t.s2 = s2;
+			s.push_back(t);
+		}
+	}
+    else
+	{
+		cout << "no such file" << endl;
+	}
+
+}
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -15,11 +44,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->wdati->close();
     ui->wsheding->close();
     ui->wjilu->close();
-    ui->timu->setText("1+1+3?");
-
 
 }
-
+void MainWindow::onTimeOut()
+{   lcd_time--;
+    if(lcd_time==0){
+        lcd_time=20;
+    }
+   ui->lcdNumber->display(to_string (lcd_time).c_str());
+}
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -27,10 +60,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_7_clicked()
 {
-      ui->wjilu->close();
+    ui->wjilu->close();
     ui->wsheding->close();
-     ui->wdati->show();
-
+    ui->wdati->show();
+    lcd_time=20;
+    QuestionSetGenerator q;
+    string s ="+-*^@";
+    char * str = strdup (s.c_str());
+    int flag= q.Setting(10, 4,str, 0, 1, 100);
+	q.Generate(flag);
+	vector<s_timu> t;
+	getstring(t);
+	string s1 = t[1].s1;
+	QString q_str = QString::fromStdString(s1);
+	ui->timu->setText(q_str);
 }
 
 void MainWindow::on_pushButton_6_clicked()
@@ -48,4 +91,14 @@ void MainWindow::on_pushButton_5_clicked()
       ui->wjilu->show();
       ui->tableWidget->setRowCount(100);
       ui->tableWidget->setItem(1, 0, new QTableWidgetItem("hdkljah"));
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QTimer *pTimer = new QTimer(this);
+    // 设置定时间隔
+    pTimer->setInterval(1000);
+    connect(pTimer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
+    // 启动定时器
+    pTimer->start();
 }

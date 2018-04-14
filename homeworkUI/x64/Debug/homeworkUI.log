@@ -1,0 +1,13 @@
+﻿  Generate moc_predefs.h
+  Moc'ing mainwindow.h...
+  Uic'ing dati.ui...
+  C:\Users\23925\Desktop\UI\homeworkUI\dati.ui: Warning: The name 'checkBox_2' (QCheckBox) is already in use, defaulting to 'checkBox_21'.
+  C:\Users\23925\Desktop\UI\homeworkUI\dati.ui: Warning: The name 'checkBox_4' (QCheckBox) is already in use, defaulting to 'checkBox_41'.
+  C:\Users\23925\Desktop\UI\homeworkUI\dati.ui: Warning: The name 'checkBox_3' (QCheckBox) is already in use, defaulting to 'checkBox_31'.
+  C:\Users\23925\Desktop\UI\homeworkUI\dati.ui: Warning: The name 'checkBox' (QCheckBox) is already in use, defaulting to 'checkBox1'.
+  main.cpp
+  mainwindow.cpp
+  tableitem.cpp
+  moc_mainwindow.cpp
+    正在创建库 debug\\homeworkUI.lib 和对象 debug\\homeworkUI.exp
+  homeworkUI.vcxproj -> C:\Users\23925\Desktop\UI\homeworkUI\debug\homeworkUI.exe
