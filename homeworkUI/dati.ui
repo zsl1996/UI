@@ -6,14 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>978</width>
-    <height>702</height>
+    <width>1708</width>
+    <height>1160</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>四则运算</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <widget class="QWidget" name="wdati" native="true">
     <property name="geometry">
      <rect>
@@ -206,8 +209,8 @@
    <widget class="QWidget" name="wsheding" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>40</y>
+      <x>40</x>
+      <y>860</y>
       <width>1071</width>
       <height>581</height>
      </rect>
@@ -540,11 +543,17 @@
    <widget class="QWidget" name="wjilu" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>40</y>
+      <x>860</x>
+      <y>140</y>
       <width>1051</width>
-      <height>761</height>
+      <height>751</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <underline>false</underline>
+     </font>
     </property>
     <widget class="QLabel" name="label_12">
      <property name="geometry">
@@ -564,21 +573,60 @@
       <string>答题记录</string>
      </property>
     </widget>
-    <widget class="QTableView" name="tableView">
+    <widget class="QTableWidget" name="tableWidget">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>140</y>
-       <width>711</width>
-       <height>311</height>
+       <x>120</x>
+       <y>170</y>
+       <width>611</width>
+       <height>371</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>黑体</family>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <column>
+      <property name="text">
+       <string>题号</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>题目</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>得分</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>正确答案</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>回答</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>用时</string>
+      </property>
+     </column>
     </widget>
    </widget>
    <zorder>horizontalLayoutWidget_2</zorder>
    <zorder>wdati</zorder>
-   <zorder>wjilu</zorder>
    <zorder>wsheding</zorder>
+   <zorder>wjilu</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

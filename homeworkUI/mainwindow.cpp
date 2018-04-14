@@ -1,6 +1,12 @@
 #include "mainwindow.h"
 #include "ui_dati.h"
 #include<iostream>
+#include"tableitem.h"
+#include"core/Core.h"
+struct table
+{
+
+};
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -37,8 +43,9 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    ui->wdati->close();
-   ui->wsheding->close ();
+      ui->wdati->close();
+      ui->wsheding->close ();
       ui->wjilu->show();
-
+      ui->tableWidget->setRowCount(100);
+      ui->tableWidget->setItem(1, 0, new QTableWidgetItem("hdkljah"));
 }

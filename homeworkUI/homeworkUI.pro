@@ -25,11 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    tableitem.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    tableitem.h \
+    core/Core.h
 
 FORMS += \
         dati.ui
 CONFIG += C++11
+LIBS += C:/Users/23925/Desktop/UI/homeworkUI/core/Core.lib

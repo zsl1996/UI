@@ -22,7 +22,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -81,7 +81,7 @@ public:
     QPushButton *pushButton_12;
     QWidget *wjilu;
     QLabel *label_12;
-    QTableView *tableView;
+    QTableWidget *tableWidget;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;
@@ -90,11 +90,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(978, 702);
+        MainWindow->resize(1708, 1160);
         actiongsddgs = new QAction(MainWindow);
         actiongsddgs->setObjectName(QStringLiteral("actiongsddgs"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setEnabled(true);
         wdati = new QWidget(centralWidget);
         wdati->setObjectName(QStringLiteral("wdati"));
         wdati->setGeometry(QRect(0, 40, 991, 581));
@@ -194,7 +195,7 @@ public:
 
         wsheding = new QWidget(centralWidget);
         wsheding->setObjectName(QStringLiteral("wsheding"));
-        wsheding->setGeometry(QRect(10, 40, 1071, 581));
+        wsheding->setGeometry(QRect(40, 860, 1071, 581));
         label_2 = new QLabel(wsheding);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(40, 30, 271, 51));
@@ -326,19 +327,42 @@ public:
 
         wjilu = new QWidget(centralWidget);
         wjilu->setObjectName(QStringLiteral("wjilu"));
-        wjilu->setGeometry(QRect(0, 40, 1051, 761));
+        wjilu->setGeometry(QRect(860, 140, 1051, 751));
+        QFont font7;
+        font7.setPointSize(14);
+        font7.setUnderline(false);
+        wjilu->setFont(font7);
         label_12 = new QLabel(wjilu);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(300, 40, 251, 71));
         label_12->setFont(font);
-        tableView = new QTableView(wjilu);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(50, 140, 711, 311));
+        tableWidget = new QTableWidget(wjilu);
+        if (tableWidget->columnCount() < 6)
+            tableWidget->setColumnCount(6);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(120, 170, 611, 371));
+        QFont font8;
+        font8.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
+        font8.setPointSize(17);
+        tableWidget->setFont(font8);
+        tableWidget->setSortingEnabled(false);
         MainWindow->setCentralWidget(centralWidget);
         horizontalLayoutWidget_2->raise();
         wdati->raise();
-        wjilu->raise();
         wsheding->raise();
+        wjilu->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -387,6 +411,18 @@ public:
         pushButton_13->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\256\276\347\275\256", nullptr));
         pushButton_12->setText(QApplication::translate("MainWindow", "\346\201\242\345\244\215\351\273\230\350\256\244", nullptr));
         label_12->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230\350\256\260\345\275\225", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "\351\242\230\345\217\267", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "\351\242\230\347\233\256", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "\345\276\227\345\210\206", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "\346\255\243\347\241\256\347\255\224\346\241\210", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "\345\233\236\347\255\224", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "\347\224\250\346\227\266", nullptr));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 
