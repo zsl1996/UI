@@ -297,7 +297,7 @@ public:
         __qtablewidgetitem4->setFont(font1);
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(160, 140, 561, 371));
+        tableWidget->setGeometry(QRect(50, 140, 711, 371));
         QFont font4;
         font4.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
         font4.setPointSize(17);
