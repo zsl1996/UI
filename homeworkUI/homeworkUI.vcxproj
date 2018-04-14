@@ -190,7 +190,7 @@
     <ClCompile Include="tableitem.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Core.h" />
+    <ClInclude Include="dll.h" />
     <QtMoc Include="mainwindow.h">
     </QtMoc>
     <ClInclude Include="tableitem.h" />

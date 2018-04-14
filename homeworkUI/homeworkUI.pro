@@ -31,7 +31,7 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     tableitem.h \
-    Core.h
+    dll.h
 
 FORMS += \
         dati.ui

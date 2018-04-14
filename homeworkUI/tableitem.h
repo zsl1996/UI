@@ -6,8 +6,8 @@ class tableitem
 {
 public:
     tableitem();
-    string tihao;
-    string chengji;
+    string t;
+    float chengji;
     string shijian;
     string zdaan;
     string wdaan;

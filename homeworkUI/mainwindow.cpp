@@ -2,40 +2,25 @@
 #include "ui_dati.h"
 #include<iostream>
 #include"tableitem.h"
-#include"Core.h"
+#include"dll.h"
 #include<vector>
 #include <QMessageBox>
-#include <QTimer>
+
+int num_max=1000;//操作数的最大值，默认1000，有效范围1 ~ INT_MAX
+int num_limit=20;// 操作数最大个数，默认20，有效范围1 ~ INT_MAX
+int exp_num=5;//表达式个数，默认5，有效范围1 ~ INT_MAX
+int type_u=1; //操作数类型，有效范围0 double, 1 int, 2 fraction，默认double
+int precision=2;// 小数精度，默认2，有效范围1 ~ INT_MAX
+bool b_add=true;
+bool b_sub=true;
+bool b_div=false;
+bool b_pow=false;
+bool  b_mul =false;
+float sumscore=0;
 int lcd_time= 20; //计时器间隔
-struct s_timu
-{
-    string s1;
-    string s2;
-};
-void getstring(vector<s_timu>& s )
-{
-	ifstream in1("formula.txt");
-	ifstream in2("result.txt");
-	s_timu t;
-	string line;
-	string s1;
-	string s2;
-    if (in1&&in2)
-	{
-        while (getline(in1,s1)&& getline(in2,s2))
-		{
-			t.s1 = s1;
-			t.s2 = s2;
-			s.push_back(t);
-		}
-	}
-    else
-	{
-		cout << "no such file" << endl;
-	}
-
-}
-
+int nownum=0;//现在正在答的题下标
+vector<tableitem> table;
+using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -44,9 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->wdati->close();
     ui->wsheding->close();
     ui->wjilu->close();
+    pTimer->setInterval(1000);
+    connect(pTimer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
 
 }
-void MainWindow::onTimeOut()
+void MainWindow::onTimeOut() //计时器槽，1s一次
 {   lcd_time--;
     if(lcd_time==0){
         lcd_time=20;
@@ -58,25 +45,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_7_clicked()
+void MainWindow::on_pushButton_7_clicked() //进入答题界面
 {
     ui->wjilu->close();
     ui->wsheding->close();
     ui->wdati->show();
     lcd_time=20;
-    QuestionSetGenerator q;
-    string s ="+-*^@";
-    char * str = strdup (s.c_str());
-    int flag= q.Setting(10, 4,str, 0, 1, 100);
-	q.Generate(flag);
-	vector<s_timu> t;
-	getstring(t);
-	string s1 = t[1].s1;
-	QString q_str = QString::fromStdString(s1);
-	ui->timu->setText(q_str);
+    pTimer->stop();
+    ui->lcdNumber->display(to_string (lcd_time).c_str());
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_pushButton_6_clicked() //进入设定界面
 {
       ui->wjilu->close();
      ui->wdati->close();
@@ -84,7 +63,7 @@ void MainWindow::on_pushButton_6_clicked()
 
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_pushButton_5_clicked() //进入答题记录界面
 {
       ui->wdati->close();
       ui->wsheding->close ();
@@ -93,12 +72,44 @@ void MainWindow::on_pushButton_5_clicked()
       ui->tableWidget->setItem(1, 0, new QTableWidgetItem("hdkljah"));
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_clicked() //开始答题按钮
 {
-    QTimer *pTimer = new QTimer(this);
-    // 设置定时间隔
-    pTimer->setInterval(1000);
-    connect(pTimer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
-    // 启动定时器
-    pTimer->start();
+        pTimer->start();
+        string s;
+        string result;
+        generate();
+        int nownum=0 ;
+        if(get_exp( nownum, s, result)){
+            ui->timu->setText(s.c_str());
+        }
+
+}
+
+void MainWindow::on_pushButton_12_clicked() //恢复默认设置
+{
+
+    set_precision( 2);
+    set_opr(true,  true,  false,  false, false);
+    set( 1000, 20,  5,  1 ,  2 );
+}
+
+void MainWindow::on_pushButton_3_clicked() //确认此题答案
+{
+    tableitem item;
+    item.shijian=to_string(lcd_time);
+    string s_txt = ui->daan->text().toStdString();
+    item.wdaan=s_txt;
+    string s_timu;
+    string s_daan;
+    get_exp(nownum ,item.t, item.zdaan);
+    if(strcmp(item.zdaan.c_str(),s_txt.c_str())==0){
+       item.chengji= lcd_time/20.0*100;//以剩余事时间比上20s作为得分
+    }
+    else{
+        item.chengji=0;
+    }
+    sumscore+=item.chengji;
+    int ave=sumscore/(nownum+1);
+    ui->avescore->setText(to_string(ave).c_str());
+    table.push_back(item);
 }
