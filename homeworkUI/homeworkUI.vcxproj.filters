@@ -46,6 +46,9 @@
     <ClCompile Include="tableitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="review.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dll.h">
@@ -57,17 +60,20 @@
     <ClInclude Include="tableitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="myapi.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="review.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    
-    
     <CustomBuild Include="debug\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
-    
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="dati.ui">

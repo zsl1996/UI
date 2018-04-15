@@ -187,12 +187,15 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="review.cpp" />
     <ClCompile Include="tableitem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dll.h" />
     <QtMoc Include="mainwindow.h">
     </QtMoc>
+    <ClInclude Include="myapi.hpp" />
+    <ClInclude Include="review.h" />
     <ClInclude Include="tableitem.h" />
   </ItemGroup>
   <ItemGroup>

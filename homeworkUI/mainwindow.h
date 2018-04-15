@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include<QKeyEvent>
 namespace Ui {
 class MainWindow;
 }
@@ -12,6 +13,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
      QTimer *pTimer = new QTimer(this);
 
     explicit MainWindow(QWidget *parent = 0);
@@ -30,10 +32,10 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-    void RefreshUI();
+    int RefreshUI();
     void pushvector();
     void on_pushButton_2_clicked();
-
+	void keyPressEvent(QKeyEvent *event);
 private:
     Ui::MainWindow *ui;
 };
