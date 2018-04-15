@@ -7,8 +7,9 @@
 #include <QMessageBox>
 #include"review.h"
 int cor_num = 0;
-float sumtime = 0;
+int sumtime = 0;
 float sumsc = 0;
+int flag = 0;//标志是否开始答题
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -43,6 +44,8 @@ int MainWindow::RefreshUI() { //刷新答题界面平均成绩，题目，答案
 			pTimer->stop();
 			nownum = 0;
 			sumscore = 0;
+			on_pushButton_clicked();
+			flag = 0;
 			QMessageBox::warning(this, tr("答题结束"),
 				tr("本轮答题已经结束\n"
 					"你可以到答题记录以及成绩分享查看本次答题相关统计信息")
@@ -83,7 +86,7 @@ string s_timu;
 	string s_daan;
 	my_get_exp(nownum, s_timu, s_daan);
 	string s_txt = ui->daan->text().toStdString();
-	if (strcmp(s_daan.c_str(), s_txt.c_str()) == 0) {
+	if (strcmp(s_daan.c_str(), s_txt.c_str()) == 0&& s_txt.c_str()!="") {
 		tempscore = lcd_time / 20.0 * 100;//以剩余时间比上20s作为得分
 	}
 	else {
@@ -104,6 +107,7 @@ string s_timu;
 		r.daan = s_daan;
 		r.timu = s_timu;
 		reviewtable.push_back(r);
+		sumtime += (20 - lcd_time);
 
 	}
 	else {
@@ -140,6 +144,9 @@ void MainWindow::on_pushButton_7_clicked() //进入答题界面
     pTimer->stop();
     ui->lcdNumber->display(to_string (lcd_time).c_str());
     ui->avescore->setText("0");
+	ui->timu->setText("");
+	flag = 0;
+	review_flag = 0;
 }
 
 void MainWindow::on_pushButton_6_clicked() //进入设定界面
@@ -187,6 +194,7 @@ void MainWindow::on_pushButton_clicked() //开始答题按钮
         if(my_get_exp( nownum, s, result)){
             ui->timu->setText(s.c_str());
         }
+		flag = 1;
 
 
 }
@@ -202,20 +210,38 @@ void MainWindow::on_pushButton_12_clicked() //恢复默认设置
 
 void MainWindow::on_pushButton_3_clicked() //确认此题答案
 {
-	pTimer->start();
+
 	if (ui->radio_review->isChecked() == true)
 	{
 		review_flag = 1;
 	}
 	else  review_flag = 0;
-	pushvector();
-       RefreshUI();
-}
+	if (review_flag == 1 || flag == 1) {
+		pushvector();
+		RefreshUI();
+	}
+	else {
+		QMessageBox::warning(this, tr("warning"),
+			tr("Please click 开始a first"""
+			)
+
+		);
+	}
+	}
 
 void MainWindow::on_pushButton_2_clicked() //放弃此题
 {
-    pushvector();
-	RefreshUI();
+	if (review_flag == 1 || flag == 1) {
+		pushvector();
+		RefreshUI();
+	}
+	else {
+		QMessageBox::warning(this, tr("warning"),
+			tr("Please click 开始a first"""
+			)
+
+		);
+	}
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event) {  //检测enter键，等同确认答题

@@ -194,6 +194,7 @@
     <ClInclude Include="dll.h" />
     <QtMoc Include="mainwindow.h">
     </QtMoc>
+    <ClInclude Include="myapi.hpp" />
     <ClInclude Include="review.h" />
     <ClInclude Include="tableitem.h" />
   </ItemGroup>

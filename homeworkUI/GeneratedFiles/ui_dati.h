@@ -474,9 +474,9 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         horizontalLayoutWidget_2->raise();
         wjilu->raise();
-        wdati->raise();
         wsheding->raise();
         widget->raise();
+        wdati->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -536,7 +536,7 @@ public:
         lable->setText(QApplication::translate("MainWindow", "\345\260\217\345\255\246\347\224\237\347\232\204\350\257\225\347\202\274\344\271\213\345\234\260", nullptr));
         label->setText(QApplication::translate("MainWindow", "\345\200\222\350\256\241\346\227\266", nullptr));
         daan->setText(QString());
-        pushButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\347\255\224\351\242\230", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\357\274\201", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "\346\224\276\345\274\203\346\255\244\351\242\230", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "\346\255\244\351\230\266\346\256\265\345\271\263\345\235\207\345\210\206", nullptr));

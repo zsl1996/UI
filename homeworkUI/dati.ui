@@ -672,7 +672,7 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>开始答题</string>
+         <string>开始！</string>
         </property>
        </widget>
       </item>
@@ -953,9 +953,9 @@
    </widget>
    <zorder>horizontalLayoutWidget_2</zorder>
    <zorder>wjilu</zorder>
-   <zorder>wdati</zorder>
    <zorder>wsheding</zorder>
    <zorder>widget</zorder>
+   <zorder>wdati</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
