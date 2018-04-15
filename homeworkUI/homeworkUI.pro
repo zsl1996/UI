@@ -26,12 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    tableitem.cpp
+    tableitem.cpp \
+    review.cpp
 
 HEADERS += \
         mainwindow.h \
     tableitem.h \
-    dll.h
+    dll.h \
+    review.h
 
 FORMS += \
         dati.ui

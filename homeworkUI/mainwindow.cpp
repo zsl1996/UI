@@ -7,7 +7,6 @@
 #include <QMessageBox>
 #include"review.h"
 using namespace std;
-
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::MainWindow)
@@ -210,4 +209,33 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {  //检测enter键，等同确
 	if (event->key() == Qt::Key_Enter|| event->key() == Qt::Key_Return) {
 		on_pushButton_3_clicked();
 	}
+}
+void MainWindow::on_pushButton_13_clicked() //保存设置
+{
+	num_max = ui->lineEdit_6->text().toInt();
+	num_limit = ui->lineEdit_4->text().toInt();
+	exp_num = ui->lineEdit_3->text().toInt();
+    if (ui->radioButton->isChecked()) {
+        type_u = 1;
+	}
+    if(ui->radioButton_6->isChecked())
+	{
+        type_u = 0;
+	}
+    if(ui->radioButton_7->isChecked())
+    {
+        type_u =2 ;
+    }
+	b_add = ui->checkBox_3->isChecked();
+	b_sub = ui->checkBox_4->isChecked();
+	b_mul = ui->checkBox_2->isChecked();
+	b_div = ui->checkBox->isChecked();
+	b_pow = ui->checkBox_5->isChecked();
+	my_set_opr();
+	my_set();
+	QMessageBox::warning(this, tr("设置成功"),
+		tr("设置已经结束\n""你可以重新设置或者转其他界面"
+		)
+
+	);
 }

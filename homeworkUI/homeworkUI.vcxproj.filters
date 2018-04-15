@@ -43,10 +43,10 @@
     <ClCompile Include="mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tableitem.cpp">
+    <ClCompile Include="review.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="review.cpp">
+    <ClCompile Include="tableitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,13 +57,13 @@
     <QtMoc Include="mainwindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="review.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="tableitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="myapi.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="review.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

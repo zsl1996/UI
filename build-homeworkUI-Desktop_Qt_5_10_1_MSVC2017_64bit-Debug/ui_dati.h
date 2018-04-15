@@ -21,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
@@ -61,14 +62,14 @@ public:
     QLabel *label_11;
     QWidget *horizontalLayoutWidget_5;
     QHBoxLayout *horizontalLayout_8;
-    QCheckBox *checkBox_21;
-    QCheckBox *checkBox_41;
-    QCheckBox *checkBox_31;
-    QCheckBox *checkBox1;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_7;
+    QRadioButton *radioButton_6;
     QWidget *horizontalLayoutWidget_6;
     QHBoxLayout *horizontalLayout_9;
     QPushButton *pushButton_13;
     QPushButton *pushButton_12;
+    QCheckBox *checkBox_5;
     QWidget *wjilu;
     QLabel *label_12;
     QTableWidget *tableWidget;
@@ -85,6 +86,7 @@ public:
     QTextBrowser *timu;
     QLabel *label_4;
     QLineEdit *avescore;
+    QRadioButton *radio_review;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;
@@ -93,7 +95,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(918, 603);
+        MainWindow->resize(932, 1614);
         actiongsddgs = new QAction(MainWindow);
         actiongsddgs->setObjectName(QStringLiteral("actiongsddgs"));
         centralWidget = new QWidget(MainWindow);
@@ -144,16 +146,17 @@ public:
         label_2->setFont(font);
         lineEdit_3 = new QLineEdit(wsheding);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(180, 100, 101, 20));
+        lineEdit_3->setGeometry(QRect(200, 100, 81, 20));
         lineEdit_4 = new QLineEdit(wsheding);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(180, 150, 101, 20));
+        lineEdit_4->setGeometry(QRect(200, 150, 81, 20));
         lineEdit_5 = new QLineEdit(wsheding);
         lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
-        lineEdit_5->setGeometry(QRect(500, 150, 51, 20));
+        lineEdit_5->setEnabled(false);
+        lineEdit_5->setGeometry(QRect(450, 150, 51, 20));
         lineEdit_6 = new QLineEdit(wsheding);
         lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
-        lineEdit_6->setGeometry(QRect(590, 150, 51, 20));
+        lineEdit_6->setGeometry(QRect(550, 150, 51, 20));
         label_3 = new QLabel(wsheding);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(70, 90, 81, 31));
@@ -162,23 +165,23 @@ public:
         label_3->setFont(font1);
         label_7 = new QLabel(wsheding);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(70, 150, 101, 20));
+        label_7->setGeometry(QRect(70, 150, 131, 20));
         label_7->setFont(font1);
         label_8 = new QLabel(wsheding);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(350, 150, 121, 16));
+        label_8->setGeometry(QRect(310, 150, 121, 16));
         label_8->setFont(font1);
         label_9 = new QLabel(wsheding);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(560, 150, 21, 21));
+        label_9->setGeometry(QRect(520, 150, 21, 21));
         label_9->setFont(font1);
         label_10 = new QLabel(wsheding);
         label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(360, 95, 121, 21));
+        label_10->setGeometry(QRect(310, 100, 121, 21));
         label_10->setFont(font1);
         horizontalLayoutWidget_4 = new QWidget(wsheding);
         horizontalLayoutWidget_4->setObjectName(QStringLiteral("horizontalLayoutWidget_4"));
-        horizontalLayoutWidget_4->setGeometry(QRect(490, 90, 451, 31));
+        horizontalLayoutWidget_4->setGeometry(QRect(410, 100, 451, 31));
         horizontalLayout_7 = new QHBoxLayout(horizontalLayoutWidget_4);
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
@@ -217,39 +220,34 @@ public:
         label_11->setFont(font);
         horizontalLayoutWidget_5 = new QWidget(wsheding);
         horizontalLayoutWidget_5->setObjectName(QStringLiteral("horizontalLayoutWidget_5"));
-        horizontalLayoutWidget_5->setGeometry(QRect(60, 280, 761, 80));
+        horizontalLayoutWidget_5->setGeometry(QRect(10, 260, 761, 80));
         horizontalLayout_8 = new QHBoxLayout(horizontalLayoutWidget_5);
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
         horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
-        checkBox_21 = new QCheckBox(horizontalLayoutWidget_5);
-        checkBox_21->setObjectName(QStringLiteral("checkBox_21"));
-        checkBox_21->setFont(font1);
+        radioButton = new QRadioButton(horizontalLayoutWidget_5);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+        radioButton->setFont(font1);
 
-        horizontalLayout_8->addWidget(checkBox_21);
+        horizontalLayout_8->addWidget(radioButton);
 
-        checkBox_41 = new QCheckBox(horizontalLayoutWidget_5);
-        checkBox_41->setObjectName(QStringLiteral("checkBox_41"));
-        checkBox_41->setFont(font1);
+        radioButton_7 = new QRadioButton(horizontalLayoutWidget_5);
+        radioButton_7->setObjectName(QStringLiteral("radioButton_7"));
+        radioButton_7->setFont(font1);
 
-        horizontalLayout_8->addWidget(checkBox_41);
+        horizontalLayout_8->addWidget(radioButton_7);
 
-        checkBox_31 = new QCheckBox(horizontalLayoutWidget_5);
-        checkBox_31->setObjectName(QStringLiteral("checkBox_31"));
-        checkBox_31->setFont(font1);
+        radioButton_6 = new QRadioButton(horizontalLayoutWidget_5);
+        radioButton_6->setObjectName(QStringLiteral("radioButton_6"));
+        radioButton_6->setFont(font1);
+        radioButton_6->setChecked(true);
 
-        horizontalLayout_8->addWidget(checkBox_31);
-
-        checkBox1 = new QCheckBox(horizontalLayoutWidget_5);
-        checkBox1->setObjectName(QStringLiteral("checkBox1"));
-        checkBox1->setFont(font1);
-
-        horizontalLayout_8->addWidget(checkBox1);
+        horizontalLayout_8->addWidget(radioButton_6);
 
         horizontalLayoutWidget_6 = new QWidget(wsheding);
         horizontalLayoutWidget_6->setObjectName(QStringLiteral("horizontalLayoutWidget_6"));
-        horizontalLayoutWidget_6->setGeometry(QRect(130, 430, 874, 80));
+        horizontalLayoutWidget_6->setGeometry(QRect(150, 390, 541, 80));
         horizontalLayout_9 = new QHBoxLayout(horizontalLayoutWidget_6);
         horizontalLayout_9->setSpacing(356);
         horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
@@ -265,6 +263,10 @@ public:
 
         horizontalLayout_9->addWidget(pushButton_12);
 
+        checkBox_5 = new QCheckBox(wsheding);
+        checkBox_5->setObjectName(QStringLiteral("checkBox_5"));
+        checkBox_5->setGeometry(QRect(10, 360, 249, 20));
+        checkBox_5->setFont(font1);
         wjilu = new QWidget(centralWidget);
         wjilu->setObjectName(QStringLiteral("wjilu"));
         wjilu->setGeometry(QRect(30, 40, 1031, 611));
@@ -297,7 +299,7 @@ public:
         __qtablewidgetitem4->setFont(font1);
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(50, 140, 711, 371));
+        tableWidget->setGeometry(QRect(50, 130, 711, 371));
         QFont font4;
         font4.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
         font4.setPointSize(17);
@@ -378,11 +380,15 @@ public:
         avescore->setEnabled(false);
         avescore->setGeometry(QRect(640, 390, 121, 31));
         avescore->setFont(font8);
+        radio_review = new QRadioButton(wdati);
+        radio_review->setObjectName(QStringLiteral("radio_review"));
+        radio_review->setGeometry(QRect(110, 140, 89, 16));
+        radio_review->setFont(font1);
         MainWindow->setCentralWidget(centralWidget);
         horizontalLayoutWidget_2->raise();
         wjilu->raise();
-        wsheding->raise();
         wdati->raise();
+        wsheding->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -408,8 +414,12 @@ public:
         pushButton_4->setText(QApplication::translate("MainWindow", "\346\210\220\347\273\251\345\210\206\344\272\253", nullptr));
         pushButton_8->setText(QApplication::translate("MainWindow", "\350\201\224\347\263\273\346\210\221\344\273\254", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "\350\257\267\346\240\271\346\215\256\351\234\200\350\246\201\350\277\233\350\241\214\351\242\230\347\233\256\347\233\270\345\205\263\350\256\276\345\256\232", nullptr));
+        lineEdit_3->setText(QApplication::translate("MainWindow", "5", nullptr));
+        lineEdit_4->setText(QApplication::translate("MainWindow", "5", nullptr));
+        lineEdit_5->setText(QApplication::translate("MainWindow", "1", nullptr));
+        lineEdit_6->setText(QApplication::translate("MainWindow", "1000", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "\351\242\230\347\233\256\344\270\252\346\225\260\357\274\232", nullptr));
-        label_7->setText(QApplication::translate("MainWindow", "\346\223\215\344\275\234\346\225\260\344\270\252\346\225\260\357\274\232", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "\346\234\200\345\244\247\346\223\215\344\275\234\346\225\260\344\270\252\346\225\260\357\274\232", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "\346\223\215\344\275\234\346\225\260\346\225\260\345\200\274\350\214\203\345\233\264\357\274\232", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "\350\207\263", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "\350\277\220\347\256\227\347\254\246\347\247\215\347\261\273\357\274\232", nullptr));
@@ -418,12 +428,12 @@ public:
         checkBox_2->setText(QApplication::translate("MainWindow", "\344\271\230\346\263\225", nullptr));
         checkBox->setText(QApplication::translate("MainWindow", "\351\231\244\346\263\225", nullptr));
         label_11->setText(QApplication::translate("MainWindow", "\351\232\276\345\272\246\346\217\220\345\215\207", nullptr));
-        checkBox_21->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\345\260\217\346\225\260\350\277\220\347\256\227", nullptr));
-        checkBox_41->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\344\271\230\346\226\271\350\277\220\347\256\227", nullptr));
-        checkBox_31->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\345\260\217\346\225\260\350\277\220\347\256\227", nullptr));
-        checkBox1->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\347\234\237\345\210\206\346\225\260\350\277\220\347\256\227", nullptr));
+        radioButton->setText(QApplication::translate("MainWindow", "\344\273\205\346\224\257\346\214\201\346\225\264\346\225\260\350\277\220\347\256\227", nullptr));
+        radioButton_7->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\345\210\206\346\225\260\350\277\220\347\256\227", nullptr));
+        radioButton_6->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\345\260\217\346\225\260\350\277\220\347\256\227", nullptr));
         pushButton_13->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\256\276\347\275\256", nullptr));
         pushButton_12->setText(QApplication::translate("MainWindow", "\346\201\242\345\244\215\351\273\230\350\256\244", nullptr));
+        checkBox_5->setText(QApplication::translate("MainWindow", "\346\224\257\346\214\201\344\271\230\346\226\271\350\277\220\347\256\227", nullptr));
         label_12->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230\350\256\260\345\275\225", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "\351\242\230\347\233\256", nullptr));
@@ -442,6 +452,7 @@ public:
         pushButton_3->setText(QApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "\346\224\276\345\274\203\346\255\244\351\242\230", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "\347\233\256\345\211\215\345\271\263\345\235\207\345\210\206", nullptr));
+        radio_review->setText(QApplication::translate("MainWindow", "\345\244\215\344\271\240\346\250\241\345\274\217", nullptr));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 

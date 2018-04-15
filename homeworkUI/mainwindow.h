@@ -36,6 +36,8 @@ private slots:
     void pushvector();
     void on_pushButton_2_clicked();
 	void keyPressEvent(QKeyEvent *event);
+    void on_pushButton_13_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -37,3 +37,9 @@ int my_get_exp(int nownum, string& s1,string& s2) {
 
 	}
 }
+void my_set_opr() {
+	set_opr(b_add,b_sub,  b_mul,  b_div,  b_pow);
+}
+void my_set() {
+	set(num_max, num_limit, exp_num, type_u, 2);
+}
