@@ -6,6 +6,9 @@
 #include<vector>
 #include <QMessageBox>
 #include"review.h"
+int cor_num = 0;
+float sumtime = 0;
+float sumsc = 0;
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -15,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->wdati->close();
 	ui->wsheding->close();
 	ui->wjilu->close();
+	ui->widget->close();
 	pTimer->setInterval(1000);
 	connect(pTimer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
 
@@ -86,6 +90,8 @@ string s_timu;
 		tempscore = 0;
 	}
 	sumscore += tempscore;
+	sumsc += tempscore;
+
 	tableitem item;
 	item.shijian = to_string(20 - lcd_time);
 	item.wdaan = s_txt;
@@ -99,6 +105,10 @@ string s_timu;
 		r.timu = s_timu;
 		reviewtable.push_back(r);
 
+	}
+	else {
+		cor_num++;
+		sumtime += (20 - lcd_time);
 	}
 	if(int(tempscore)!= 0 && review_flag == 1&&exp_num!=0){
 		reviewtable.erase(reviewtable.begin() + nownum%exp_num);
@@ -124,6 +134,7 @@ void MainWindow::on_pushButton_7_clicked() //进入答题界面
 {
     ui->wjilu->close();
     ui->wsheding->close();
+	ui->widget->close();
     ui->wdati->show();
     lcd_time=20;
     pTimer->stop();
@@ -135,6 +146,7 @@ void MainWindow::on_pushButton_6_clicked() //进入设定界面
 {
     ui->wjilu->close();
     ui->wdati->close();
+	ui->widget->close();
     ui->wsheding->show();
 	pTimer->stop();
 
@@ -144,6 +156,7 @@ void MainWindow::on_pushButton_5_clicked() //进入答题记录界面
 {
       ui->wdati->close();
       ui->wsheding->close ();
+	  ui->widget->close();
       ui->wjilu->show();
       int size = table.size();
       ui->tableWidget->setRowCount(size);
@@ -174,7 +187,7 @@ void MainWindow::on_pushButton_clicked() //开始答题按钮
         if(my_get_exp( nownum, s, result)){
             ui->timu->setText(s.c_str());
         }
-		table.swap(table);
+
 
 }
 
@@ -238,4 +251,37 @@ void MainWindow::on_pushButton_13_clicked() //保存设置
 		)
 
 	);
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+	ui->wdati->close();
+	ui->wsheding->close();
+	ui->wjilu->close();
+	ui->widget->show();
+	int ave = 0;
+	if (int(sumsc) == 0)  ave = 0;
+	else
+	{
+		 ave = sumsc / (table.size());
+	}
+	ui->sum->setText(to_string(table.size()).c_str());
+	ui->corsum->setText(to_string(cor_num).c_str());
+	ui->avescore_2->setText(to_string(ave).c_str());
+	int a=0;
+	if (int(sumtime==0))  a = 0;
+	else
+	{
+		a = sumtime / (table.size());
+	}
+	
+	ui->avetime->setText(to_string(a).c_str());
+	if (ave < 50) {
+		string s("Recommend using review mode"); //不这样村存在编码问题
+		ui->ana->setText(s.c_str());
+	}
+	else {
+		string s("Suggest to raise difficulty ");
+		ui->ana->setText(s.c_str());
+	}
 }

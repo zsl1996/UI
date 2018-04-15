@@ -1,0 +1,13 @@
+﻿  Generate moc_predefs.h
+  Moc'ing mainwindow.h...
+  Uic'ing dati.ui...
+  main.cpp
+  mainwindow.cpp
+  review.cpp
+  tableitem.cpp
+c:\users\23925\desktop\ui\homeworkui\mainwindow.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\23925\desktop\ui\homeworkui\myapi.hpp(32): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据 (编译源文件 mainwindow.cpp)
+c:\users\23925\desktop\ui\homeworkui\mainwindow.cpp(115): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\23925\desktop\ui\homeworkui\mainwindow.cpp(161): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  moc_mainwindow.cpp
+  homeworkUI.vcxproj -> C:\Users\23925\Desktop\UI\homeworkUI\release\homeworkUI.exe

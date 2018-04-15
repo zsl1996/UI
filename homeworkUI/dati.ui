@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>1474</height>
+    <width>853</width>
+    <height>640</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>2</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>四则运算</string>
@@ -17,12 +23,24 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>853</width>
+     <height>604</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>853</width>
+     <height>604</height>
+    </size>
+   </property>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
       <x>-1</x>
       <y>0</y>
-      <width>401</width>
+      <width>417</width>
       <height>31</height>
      </rect>
     </property>
@@ -52,13 +70,6 @@
       <widget class="QPushButton" name="pushButton_4">
        <property name="text">
         <string>成绩分享</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="text">
-        <string>联系我们</string>
        </property>
       </widget>
      </item>
@@ -244,7 +255,7 @@
       <rect>
        <x>410</x>
        <y>100</y>
-       <width>451</width>
+       <width>281</width>
        <height>31</height>
       </rect>
      </property>
@@ -714,7 +725,7 @@
       </font>
      </property>
      <property name="text">
-      <string>目前平均分</string>
+      <string>此阶段平均分</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="avescore">
@@ -757,38 +768,186 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>700</y>
-      <width>721</width>
-      <height>581</height>
+      <x>50</x>
+      <y>20</y>
+      <width>771</width>
+      <height>1071</height>
      </rect>
     </property>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>150</y>
-       <width>491</width>
-       <height>321</height>
-      </rect>
-     </property>
-    </widget>
+    <property name="font">
+     <font>
+      <pointsize>23</pointsize>
+     </font>
+    </property>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>70</y>
+       <x>240</x>
+       <y>30</y>
        <width>241</width>
        <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>24</pointsize>
+       <pointsize>26</pointsize>
       </font>
      </property>
      <property name="text">
       <string>成绩分享及分析</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>110</y>
+       <width>327</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="font">
+         <font>
+          <pointsize>19</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>本次使用共答题</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="font">
+         <font>
+          <pointsize>19</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>在其中共答对了</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_15">
+        <property name="font">
+         <font>
+          <pointsize>19</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>本次试用所有题目平均分数</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_16">
+        <property name="font">
+         <font>
+          <pointsize>19</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>平均每道题目用时</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="sum">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>120</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>19</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="corsum">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>200</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>19</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="avescore_2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>290</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>19</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ana">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>450</y>
+       <width>521</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="avetime">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>370</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>19</pointsize>
+      </font>
      </property>
     </widget>
    </widget>
