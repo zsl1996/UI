@@ -539,7 +539,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\357\274\201", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "\346\224\276\345\274\203\346\255\244\351\242\230", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "\346\255\244\351\230\266\346\256\265\345\271\263\345\235\207\345\210\206", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "\344\270\212\351\201\223\351\242\230\345\276\227\345\210\206", nullptr));
         radio_review->setText(QApplication::translate("MainWindow", "\345\244\215\344\271\240\346\250\241\345\274\217", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "\346\210\220\347\273\251\345\210\206\344\272\253\345\217\212\345\210\206\346\236\220", nullptr));
         label_14->setText(QApplication::translate("MainWindow", "\346\234\254\346\254\241\344\275\277\347\224\250\345\205\261\347\255\224\351\242\230", nullptr));

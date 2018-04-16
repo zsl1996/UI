@@ -25,8 +25,8 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -38,11 +38,10 @@ public:
     QWidget *centralWidget;
     QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_5;
-    QPushButton *pushButton_7;
     QPushButton *pushButton_6;
+    QPushButton *pushButton_7;
     QPushButton *pushButton_5;
     QPushButton *pushButton_4;
-    QPushButton *pushButton_8;
     QWidget *wsheding;
     QLabel *label_2;
     QLineEdit *lineEdit_3;
@@ -90,8 +89,18 @@ public:
     QLineEdit *avescore;
     QRadioButton *radio_review;
     QWidget *widget;
-    QTextEdit *fedit;
     QLabel *label_6;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_14;
+    QLabel *label_13;
+    QLabel *label_15;
+    QLabel *label_16;
+    QLineEdit *sum;
+    QLineEdit *corsum;
+    QLineEdit *avescore_2;
+    QLineEdit *ana;
+    QLineEdit *avetime;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QToolBar *toolBar;
@@ -100,29 +109,32 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(932, 1474);
+        MainWindow->resize(853, 640);
+        MainWindow->setMinimumSize(QSize(2, 0));
         actiongsddgs = new QAction(MainWindow);
         actiongsddgs->setObjectName(QStringLiteral("actiongsddgs"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setEnabled(true);
+        centralWidget->setMinimumSize(QSize(853, 604));
+        centralWidget->setMaximumSize(QSize(853, 604));
         horizontalLayoutWidget_2 = new QWidget(centralWidget);
         horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(-1, 0, 401, 31));
+        horizontalLayoutWidget_2->setGeometry(QRect(-1, 0, 417, 31));
         horizontalLayout_5 = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
-        pushButton_7 = new QPushButton(horizontalLayoutWidget_2);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-
-        horizontalLayout_5->addWidget(pushButton_7);
-
         pushButton_6 = new QPushButton(horizontalLayoutWidget_2);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
 
         horizontalLayout_5->addWidget(pushButton_6);
+
+        pushButton_7 = new QPushButton(horizontalLayoutWidget_2);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+
+        horizontalLayout_5->addWidget(pushButton_7);
 
         pushButton_5 = new QPushButton(horizontalLayoutWidget_2);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
@@ -133,11 +145,6 @@ public:
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
 
         horizontalLayout_5->addWidget(pushButton_4);
-
-        pushButton_8 = new QPushButton(horizontalLayoutWidget_2);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-
-        horizontalLayout_5->addWidget(pushButton_8);
 
         wsheding = new QWidget(centralWidget);
         wsheding->setObjectName(QStringLiteral("wsheding"));
@@ -186,7 +193,7 @@ public:
         label_10->setFont(font1);
         horizontalLayoutWidget_4 = new QWidget(wsheding);
         horizontalLayoutWidget_4->setObjectName(QStringLiteral("horizontalLayoutWidget_4"));
-        horizontalLayoutWidget_4->setGeometry(QRect(410, 100, 451, 31));
+        horizontalLayoutWidget_4->setGeometry(QRect(410, 100, 281, 31));
         horizontalLayout_7 = new QHBoxLayout(horizontalLayoutWidget_4);
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
@@ -395,23 +402,81 @@ public:
         radio_review->setFont(font1);
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(40, 700, 721, 581));
-        fedit = new QTextEdit(widget);
-        fedit->setObjectName(QStringLiteral("fedit"));
-        fedit->setGeometry(QRect(110, 160, 491, 321));
-        fedit->setFont(font1);
+        widget->setGeometry(QRect(50, 20, 771, 1071));
+        QFont font9;
+        font9.setPointSize(23);
+        widget->setFont(font9);
         label_6 = new QLabel(widget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(230, 70, 241, 51));
-        QFont font9;
-        font9.setPointSize(24);
-        label_6->setFont(font9);
+        label_6->setGeometry(QRect(240, 30, 241, 51));
+        QFont font10;
+        font10.setPointSize(26);
+        label_6->setFont(font10);
+        verticalLayoutWidget = new QWidget(widget);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(110, 110, 327, 321));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_14 = new QLabel(verticalLayoutWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        QFont font11;
+        font11.setPointSize(19);
+        label_14->setFont(font11);
+
+        verticalLayout->addWidget(label_14);
+
+        label_13 = new QLabel(verticalLayoutWidget);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setFont(font11);
+
+        verticalLayout->addWidget(label_13);
+
+        label_15 = new QLabel(verticalLayoutWidget);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setFont(font11);
+
+        verticalLayout->addWidget(label_15);
+
+        label_16 = new QLabel(verticalLayoutWidget);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setFont(font11);
+
+        verticalLayout->addWidget(label_16);
+
+        sum = new QLineEdit(widget);
+        sum->setObjectName(QStringLiteral("sum"));
+        sum->setEnabled(false);
+        sum->setGeometry(QRect(430, 120, 141, 41));
+        sum->setFont(font11);
+        corsum = new QLineEdit(widget);
+        corsum->setObjectName(QStringLiteral("corsum"));
+        corsum->setEnabled(false);
+        corsum->setGeometry(QRect(430, 200, 141, 41));
+        corsum->setFont(font11);
+        avescore_2 = new QLineEdit(widget);
+        avescore_2->setObjectName(QStringLiteral("avescore_2"));
+        avescore_2->setEnabled(false);
+        avescore_2->setGeometry(QRect(430, 290, 141, 41));
+        avescore_2->setFont(font11);
+        ana = new QLineEdit(widget);
+        ana->setObjectName(QStringLiteral("ana"));
+        ana->setEnabled(false);
+        ana->setGeometry(QRect(90, 450, 521, 101));
+        ana->setFont(font8);
+        avetime = new QLineEdit(widget);
+        avetime->setObjectName(QStringLiteral("avetime"));
+        avetime->setEnabled(false);
+        avetime->setGeometry(QRect(430, 370, 141, 41));
+        avetime->setFont(font11);
         MainWindow->setCentralWidget(centralWidget);
         horizontalLayoutWidget_2->raise();
         wjilu->raise();
-        wdati->raise();
         wsheding->raise();
         widget->raise();
+        wdati->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -431,11 +496,10 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\345\233\233\345\210\231\350\277\220\347\256\227", nullptr));
         actiongsddgs->setText(QApplication::translate("MainWindow", "gsddgs", nullptr));
-        pushButton_7->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230", nullptr));
         pushButton_6->setText(QApplication::translate("MainWindow", "\350\256\276\345\256\232", nullptr));
+        pushButton_7->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "\347\255\224\351\242\230\350\256\260\345\275\225", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "\346\210\220\347\273\251\345\210\206\344\272\253", nullptr));
-        pushButton_8->setText(QApplication::translate("MainWindow", "\350\201\224\347\263\273\346\210\221\344\273\254", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "\350\257\267\346\240\271\346\215\256\351\234\200\350\246\201\350\277\233\350\241\214\351\242\230\347\233\256\347\233\270\345\205\263\350\256\276\345\256\232", nullptr));
         lineEdit_3->setText(QApplication::translate("MainWindow", "5", nullptr));
         lineEdit_4->setText(QApplication::translate("MainWindow", "5", nullptr));
@@ -472,17 +536,17 @@ public:
         lable->setText(QApplication::translate("MainWindow", "\345\260\217\345\255\246\347\224\237\347\232\204\350\257\225\347\202\274\344\271\213\345\234\260", nullptr));
         label->setText(QApplication::translate("MainWindow", "\345\200\222\350\256\241\346\227\266", nullptr));
         daan->setText(QString());
-        pushButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\347\255\224\351\242\230", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\357\274\201", nullptr));
         pushButton_3->setText(QApplication::translate("MainWindow", "\347\241\256\350\256\244", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "\346\224\276\345\274\203\346\255\244\351\242\230", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "\347\233\256\345\211\215\345\271\263\345\235\207\345\210\206", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "\344\270\212\351\201\223\351\242\230\345\276\227\345\210\206", nullptr));
         radio_review->setText(QApplication::translate("MainWindow", "\345\244\215\344\271\240\346\250\241\345\274\217", nullptr));
-        fedit->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'SimSun'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "\346\210\220\347\273\251\345\210\206\344\272\253\345\217\212\345\210\206\346\236\220", nullptr));
+        label_14->setText(QApplication::translate("MainWindow", "\346\234\254\346\254\241\344\275\277\347\224\250\345\205\261\347\255\224\351\242\230", nullptr));
+        label_13->setText(QApplication::translate("MainWindow", "\345\234\250\345\205\266\344\270\255\345\205\261\347\255\224\345\257\271\344\272\206", nullptr));
+        label_15->setText(QApplication::translate("MainWindow", "\346\234\254\346\254\241\350\257\225\347\224\250\346\211\200\346\234\211\351\242\230\347\233\256\345\271\263\345\235\207\345\210\206\346\225\260", nullptr));
+        label_16->setText(QApplication::translate("MainWindow", "\345\271\263\345\235\207\346\257\217\351\201\223\351\242\230\347\233\256\347\224\250\346\227\266", nullptr));
+        ana->setText(QString());
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 

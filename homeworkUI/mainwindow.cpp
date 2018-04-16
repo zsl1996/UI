@@ -10,6 +10,7 @@ int cor_num = 0;
 int sumtime = 0;
 float sumsc = 0;
 int flag = 0;//标志是否开始答题
+
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -27,8 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 int MainWindow::RefreshUI() { //刷新答题界面平均成绩，题目，答案,要在pushvector后面
 	lcd_time = 20;
-	int ave = sumscore / (nownum + 1);
-	ui->avescore->setText(to_string(ave).c_str()); //更新平均成绩
+	int qq = tempscore;
+	ui->avescore->setText(to_string(qq).c_str()); //更新平均成绩
 
 	if (review_flag == 0) { //新题目模式
 		if ((nownum + 1) < exp_num) {
@@ -65,6 +66,7 @@ int MainWindow::RefreshUI() { //刷新答题界面平均成绩，题目，答案
 					)
 
 				);
+
 				return 0;
 			}
 			if (my_get_exp(nownum%exp_num, s_timu, s_daan)) {
@@ -86,7 +88,7 @@ string s_timu;
 	string s_daan;
 	my_get_exp(nownum, s_timu, s_daan);
 	string s_txt = ui->daan->text().toStdString();
-	if (strcmp(s_daan.c_str(), s_txt.c_str()) == 0&& s_txt.c_str()!="") {
+	if (strcmp(s_daan.c_str(), s_txt.c_str()) == 0) {
 		tempscore = lcd_time / 20.0 * 100;//以剩余时间比上20s作为得分
 	}
 	else {
@@ -187,9 +189,17 @@ void MainWindow::on_pushButton_clicked() //开始答题按钮
         string s;
         string result;
         generate();
-        int nownum=0 ;
+         nownum=0 ;
+		 ui->avescore->setText("");
+		if (review_flag == 0) {
+			exp_num = lastexp_num;
+
+		}
 		if (ui->radio_review->isChecked() == true) 
-		{ review_flag = 1; }
+		{ review_flag = 1;
+		flag = 0;
+
+		}
 		else  review_flag = 0;
         if(my_get_exp( nownum, s, result)){
             ui->timu->setText(s.c_str());
@@ -203,6 +213,7 @@ void MainWindow::on_pushButton_12_clicked() //恢复默认设置
 {
     lcd_time=20;
     nownum=0;//现在正在答的题下标
+	lastexp_num = 5;
     set_precision( 2);
     set_opr(true,  true,  false,  false, false);
     set( 1000, 20,  5,  1 ,  2 );
@@ -213,9 +224,13 @@ void MainWindow::on_pushButton_3_clicked() //确认此题答案
 
 	if (ui->radio_review->isChecked() == true)
 	{
+		flag = 0;
 		review_flag = 1;
 	}
 	else  review_flag = 0;
+	if (review_flag == 0) {
+		exp_num = lastexp_num;
+	}
 	if (review_flag == 1 || flag == 1) {
 		pushvector();
 		RefreshUI();
@@ -253,7 +268,8 @@ void MainWindow::on_pushButton_13_clicked() //保存设置
 {
 	num_max = ui->lineEdit_6->text().toInt();
 	num_limit = ui->lineEdit_4->text().toInt();
-	exp_num = ui->lineEdit_3->text().toInt();
+	lastexp_num = ui->lineEdit_3->text().toInt();
+
     if (ui->radioButton->isChecked()) {
         type_u = 1;
 	}

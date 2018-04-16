@@ -17,6 +17,7 @@ float tempscore; //当前题得分
 int lcd_time = 20; //计时器间隔
 int nownum = 0;//现在正在答的题下标
 int review_flag = 0; //标志是否是复习模式
+int lastexp_num = 5;
 vector<tableitem> table;
 vector<review> reviewtable;
 using namespace std;
@@ -41,5 +42,5 @@ void my_set_opr() {
 	set_opr(b_add,b_sub,  b_mul,  b_div,  b_pow);
 }
 void my_set() {
-	set(num_max, num_limit, exp_num, type_u, 2);
+	set(num_max, num_limit, lastexp_num, type_u, 2);
 }

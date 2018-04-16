@@ -46,16 +46,16 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="pushButton_6">
        <property name="text">
-        <string>答题</string>
+        <string>设定</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="pushButton_7">
        <property name="text">
-        <string>设定</string>
+        <string>答题</string>
        </property>
       </widget>
      </item>
@@ -725,7 +725,7 @@
       </font>
      </property>
      <property name="text">
-      <string>此阶段平均分</string>
+      <string>上道题得分</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="avescore">
