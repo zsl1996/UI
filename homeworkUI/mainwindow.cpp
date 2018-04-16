@@ -57,33 +57,33 @@ int MainWindow::RefreshUI() { //刷新答题界面平均成绩，题目，答案
 	}
 	else {
 
-			nownum++;
-			string s_timu;
-			string s_daan;
-			if (exp_num == 0) {
-				QMessageBox::warning(this, tr("复习结束"),
-					tr("复习已经结束\n""你可以去答题记录查看复习成果"
-					)
+		nownum++;
+		string s_timu;
+		string s_daan;
+		if (exp_num == 0) {
+			QMessageBox::warning(this, tr("复习结束"),
+				tr("复习已经结束\n""你可以去答题记录查看复习成果"
+				)
 
-				);
+			);
 
-				return 0;
-			}
-			if (my_get_exp(nownum%exp_num, s_timu, s_daan)) {
-				ui->timu->setText(s_timu.c_str()); //设定新题目
-				ui->daan->setText("");
-			}
+			return 0;
 		}
+		if (my_get_exp(nownum%exp_num, s_timu, s_daan)) {
+			ui->timu->setText(s_timu.c_str()); //设定新题目
+			ui->daan->setText("");
+		}
+	}
 
 
 	return 0;
-    }
+}
 
 
 
 void MainWindow::pushvector() { //将此次答题信息保存
 //更新总分
-string s_timu;
+	string s_timu;
 
 	string s_daan;
 	my_get_exp(nownum, s_timu, s_daan);
@@ -104,7 +104,7 @@ string s_timu;
 	item.zdaan = s_daan;
 	item.chengji = tempscore;
 	table.push_back(item);
-	if (int(tempscore) == 0&&review_flag==0) { //非复习模式,此题需要复习
+	if (int(tempscore) == 0 && review_flag == 0) { //非复习模式,此题需要复习
 		review r;
 		r.daan = s_daan;
 		r.timu = s_timu;
@@ -116,36 +116,36 @@ string s_timu;
 		cor_num++;
 		sumtime += (20 - lcd_time);
 	}
-	if(int(tempscore)!= 0 && review_flag == 1&&exp_num!=0){
-		reviewtable.erase(reviewtable.begin() + nownum%exp_num);
+	if (int(tempscore) != 0 && review_flag == 1 && exp_num != 0) {
+		reviewtable.erase(reviewtable.begin() + nownum % exp_num);
 		exp_num = reviewtable.size();
 	}
 }
 void MainWindow::onTimeOut() //计时器槽，1s一次
 {
-    lcd_time--;
-    if(lcd_time==0){
-        pushvector();
-        RefreshUI();
-     }
-   ui->lcdNumber->display(to_string (lcd_time).c_str());
+	lcd_time--;
+	if (lcd_time == 0) {
+		pushvector();
+		RefreshUI();
+	}
+	ui->lcdNumber->display(to_string(lcd_time).c_str());
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+	delete ui;
 }
 
 void MainWindow::on_pushButton_7_clicked() //进入答题界面
 {
-    ui->wjilu->close();
-    ui->wsheding->close();
+	ui->wjilu->close();
+	ui->wsheding->close();
 	ui->widget->close();
-    ui->wdati->show();
-    lcd_time=20;
-    pTimer->stop();
-    ui->lcdNumber->display(to_string (lcd_time).c_str());
-    ui->avescore->setText("0");
+	ui->wdati->show();
+	lcd_time = 20;
+	pTimer->stop();
+	ui->lcdNumber->display(to_string(lcd_time).c_str());
+	ui->avescore->setText("0");
 	ui->timu->setText("");
 	flag = 0;
 	review_flag = 0;
@@ -153,70 +153,71 @@ void MainWindow::on_pushButton_7_clicked() //进入答题界面
 
 void MainWindow::on_pushButton_6_clicked() //进入设定界面
 {
-    ui->wjilu->close();
-    ui->wdati->close();
+	ui->wjilu->close();
+	ui->wdati->close();
 	ui->widget->close();
-    ui->wsheding->show();
+	ui->wsheding->show();
 	pTimer->stop();
 
 }
 
 void MainWindow::on_pushButton_5_clicked() //进入答题记录界面
 {
-      ui->wdati->close();
-      ui->wsheding->close ();
-	  ui->widget->close();
-      ui->wjilu->show();
-      int size = table.size();
-      ui->tableWidget->setRowCount(size);
-      int i= 0;
-      for(vector<tableitem>::const_iterator it=table.begin();it!=table.end();it++)
-      {
-       string s =to_string(it->chengji);
-       ui->tableWidget->setItem(i, 0, new QTableWidgetItem(it->t.c_str()));
-       ui->tableWidget->setItem(i, 1, new QTableWidgetItem(s.c_str()));
-       ui->tableWidget->setItem(i, 2, new QTableWidgetItem(it->zdaan.c_str()));
-       ui->tableWidget->setItem(i, 3, new QTableWidgetItem(it->wdaan.c_str()));
-       ui->tableWidget->setItem(i, 4, new QTableWidgetItem(it->shijian.c_str()));
-	   i++;
-      }
-	  pTimer->stop();
+	ui->wdati->close();
+	ui->wsheding->close();
+	ui->widget->close();
+	ui->wjilu->show();
+	int size = table.size();
+	ui->tableWidget->setRowCount(size);
+	int i = 0;
+	for (vector<tableitem>::const_iterator it = table.begin(); it != table.end(); it++)
+	{
+		string s = to_string(it->chengji);
+		ui->tableWidget->setItem(i, 0, new QTableWidgetItem(it->t.c_str()));
+		ui->tableWidget->setItem(i, 1, new QTableWidgetItem(s.c_str()));
+		ui->tableWidget->setItem(i, 2, new QTableWidgetItem(it->zdaan.c_str()));
+		ui->tableWidget->setItem(i, 3, new QTableWidgetItem(it->wdaan.c_str()));
+		ui->tableWidget->setItem(i, 4, new QTableWidgetItem(it->shijian.c_str()));
+		i++;
+	}
+	pTimer->stop();
 }
 
 void MainWindow::on_pushButton_clicked() //开始答题按钮
 {
-        pTimer->start();
-        string s;
-        string result;
-        generate();
-         nownum=0 ;
-		 ui->avescore->setText("");
-		if (review_flag == 0) {
-			exp_num = lastexp_num;
+	pTimer->start();
+	string s;
+	string result;
+	generate();
+	nownum = 0;
+	ui->avescore->setText("");
+	if (review_flag == 0) {
+		exp_num = lastexp_num;
 
-		}
-		if (ui->radio_review->isChecked() == true) 
-		{ review_flag = 1;
+	}
+	if (ui->radio_review->isChecked() == true)
+	{
+		review_flag = 1;
 		flag = 0;
 
-		}
-		else  review_flag = 0;
-        if(my_get_exp( nownum, s, result)){
-            ui->timu->setText(s.c_str());
-        }
-		flag = 1;
+	}
+	else  review_flag = 0;
+	if (my_get_exp(nownum, s, result)) {
+		ui->timu->setText(s.c_str());
+	}
+	flag = 1;
 
 
 }
 
 void MainWindow::on_pushButton_12_clicked() //恢复默认设置
 {
-    lcd_time=20;
-    nownum=0;//现在正在答的题下标
+	lcd_time = 20;
+	nownum = 0;//现在正在答的题下标
 	lastexp_num = 5;
-    set_precision( 2);
-    set_opr(true,  true,  false,  false, false);
-    set( 1000, 20,  5,  1 ,  2 );
+	set_precision(2);
+	set_opr(true, true, false, false, false);
+	set(1000, 20, 5, 1, 2);
 }
 
 void MainWindow::on_pushButton_3_clicked() //确认此题答案
@@ -242,7 +243,7 @@ void MainWindow::on_pushButton_3_clicked() //确认此题答案
 
 		);
 	}
-	}
+}
 
 void MainWindow::on_pushButton_2_clicked() //放弃此题
 {
@@ -260,7 +261,7 @@ void MainWindow::on_pushButton_2_clicked() //放弃此题
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event) {  //检测enter键，等同确认答题
-	if (event->key() == Qt::Key_Enter|| event->key() == Qt::Key_Return) {
+	if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
 		on_pushButton_3_clicked();
 	}
 }
@@ -270,17 +271,17 @@ void MainWindow::on_pushButton_13_clicked() //保存设置
 	num_limit = ui->lineEdit_4->text().toInt();
 	lastexp_num = ui->lineEdit_3->text().toInt();
 
-    if (ui->radioButton->isChecked()) {
-        type_u = 1;
+	if (ui->radioButton->isChecked()) {
+		type_u = 1;
 	}
-    if(ui->radioButton_6->isChecked())
+	if (ui->radioButton_6->isChecked())
 	{
-        type_u = 0;
+		type_u = 0;
 	}
-    if(ui->radioButton_7->isChecked())
-    {
-        type_u =2 ;
-    }
+	if (ui->radioButton_7->isChecked())
+	{
+		type_u = 2;
+	}
 	b_add = ui->checkBox_3->isChecked();
 	b_sub = ui->checkBox_4->isChecked();
 	b_mul = ui->checkBox_2->isChecked();
@@ -305,18 +306,18 @@ void MainWindow::on_pushButton_4_clicked()
 	if (int(sumsc) == 0)  ave = 0;
 	else
 	{
-		 ave = sumsc / (table.size());
+		ave = sumsc / (table.size());
 	}
 	ui->sum->setText(to_string(table.size()).c_str());
 	ui->corsum->setText(to_string(cor_num).c_str());
 	ui->avescore_2->setText(to_string(ave).c_str());
-	int a=0;
-	if (int(sumtime==0))  a = 0;
+	int a = 0;
+	if (int(sumtime == 0))  a = 0;
 	else
 	{
 		a = sumtime / (table.size());
 	}
-	
+
 	ui->avetime->setText(to_string(a).c_str());
 	if (ave < 50) {
 		string s("Recommend using review mode"); //不这样村存在编码问题

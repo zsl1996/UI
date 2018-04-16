@@ -22,14 +22,14 @@ vector<tableitem> table;
 vector<review> reviewtable;
 using namespace std;
 
-int my_get_exp(int nownum, string& s1,string& s2) {
-	if(review_flag == 0){
-	return	get_exp( nownum,  s1,  s2);
+int my_get_exp(int nownum, string& s1, string& s2) {
+	if (review_flag == 0) {
+		return	get_exp(nownum, s1, s2);
 
 	}
 	else
 	{
-		
+
 		exp_num = reviewtable.size();
 		if (exp_num == 0) return 0;
 		s1 = reviewtable[nownum%exp_num].timu;
@@ -39,7 +39,7 @@ int my_get_exp(int nownum, string& s1,string& s2) {
 	}
 }
 void my_set_opr() {
-	set_opr(b_add,b_sub,  b_mul,  b_div,  b_pow);
+	set_opr(b_add, b_sub, b_mul, b_div, b_pow);
 }
 void my_set() {
 	set(num_max, num_limit, lastexp_num, type_u, 2);
